@@ -1,8 +1,6 @@
 import React from "react";
-import Navbar from "./Navbar";
+import { Link } from "react-router-dom";
 import Footer from "./Footer";
-
-// // You can use an online SVG or illustration for the hero section
 
 const features = [
   {
@@ -43,12 +41,12 @@ const HomePage = () => (
           The ultimate platform for competitive programmers to battle, learn,
           and rise to the top.
         </p>
-        <a
-          href="/contest"
+        <Link
+          to="/contest"
           className="inline-block bg-amber-400 text-gray-900 font-semibold px-10 py-4 rounded-full shadow-lg hover:bg-amber-300 transition text-lg"
         >
           Start a Duel
-        </a>
+        </Link>
       </section>
 
       {/* Features Section */}
@@ -83,6 +81,7 @@ const HomePage = () => (
         </p>
       </section>
     </main>
+    <Footer />
   </div>
 );
 
