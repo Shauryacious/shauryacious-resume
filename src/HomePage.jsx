@@ -81,7 +81,6 @@ const HomePage = () => (
         </p>
       </section>
     </main>
-    <Footer />
   </div>
 );
 
