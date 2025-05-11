@@ -81,12 +81,6 @@ const HomePage = () => (
           Compete with coders worldwide, improve your skills, and make new
           friends.
         </p>
-        <a
-          href="/leaderboard"
-          className="inline-block bg-gray-700 text-white px-8 py-3 rounded-full hover:bg-gray-600 transition text-lg"
-        >
-          View Leaderboard
-        </a>
       </section>
     </main>
   </div>

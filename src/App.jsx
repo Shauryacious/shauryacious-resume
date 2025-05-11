@@ -4,6 +4,7 @@ import LeaderboardPage from "./LeaderboardPage";
 import ContestPage from "./ContestPage";
 import ContestBracketPage from "./ContestBracketPage";
 import ContestLeaderboardPage from "./ContestLeaderboardPage";
+import ContestStartPage from "./ContestStartPage";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
@@ -20,7 +21,14 @@ function App() {
           path="/contest/:contestId/leaderboard"
           element={<ContestLeaderboardPage />}
         />
-        {/* You can add more routes as needed */}
+        <Route
+          path="/contest/:contestId/start"
+          element={<ContestStartPage />}
+        />
+        {/* <Route
+          path="/contest/:contestId/start"
+          element={<ProblemSolvingPage />}
+        /> */}
       </Routes>
       <Footer />
     </Router>

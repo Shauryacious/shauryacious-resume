@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import contestLeaderboardData from "./contestLeaderboardData";
 import LeaderboardCard from "./LeaderboardCard";
 
@@ -16,6 +16,7 @@ const roundOptions = [
 
 const ContestLeaderboardPage = () => {
   const { contestId } = useParams();
+  const navigate = useNavigate();
   const [sortBy, setSortBy] = useState("rank");
   const [filterTop3, setFilterTop3] = useState(false);
   const [selectedRound, setSelectedRound] = useState("round1");
@@ -40,6 +41,15 @@ const ContestLeaderboardPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white font-sans">
       <main className="max-w-5xl mx-auto px-4 py-12">
+        {/* Go Back Button */}
+        <div className="mb-4">
+          <button
+            onClick={() => navigate(-1)}
+            className="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded text-sm font-semibold text-gray-200 transition-colors"
+          >
+            ← Go Back
+          </button>
+        </div>
         <section>
           {/* Header Section */}
           <div className="text-center mb-10">
@@ -116,7 +126,7 @@ const ContestLeaderboardPage = () => {
             ) : (
               leaderboard.map((user) => (
                 <LeaderboardCard
-                  key={user.rank}
+                  key={user.rank + user.name + user.round}
                   user={user}
                   className="hover:scale-[1.02] transition-transform"
                 />

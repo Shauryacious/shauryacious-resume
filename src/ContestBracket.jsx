@@ -9,6 +9,15 @@ const ContestBracket = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-12">
+      {/* Go Back Button */}
+      <div className="max-w-6xl mx-auto px-4 mb-6">
+        <button
+          onClick={() => navigate(-1)}
+          className="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded text-sm font-semibold text-gray-200 transition-colors"
+        >
+          ← Go Back
+        </button>
+      </div>
       <h1 className="text-5xl font-extrabold mb-10 tracking-tight text-center">
         THE <span className="text-amber-400 drop-shadow">PLAYOFFS</span>
       </h1>
