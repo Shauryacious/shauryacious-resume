@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import dpSections from "./dpSections";
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
 
 // Helper to extract a readable name from a LeetCode URL
 function extractNameFromLeetCodeUrl(url) {
@@ -21,26 +23,22 @@ function extractNameFromLeetCodeUrl(url) {
 
 const LOCALSTORAGE_KEY = "dpChecklistState";
 
+// ...existing imports and helpers...
+
 const DPSheetPage = () => {
   const [openIndex, setOpenIndex] = useState(0);
   const [checked, setChecked] = useState({});
 
-  // Load from localStorage on mount
   useEffect(() => {
     const saved = localStorage.getItem(LOCALSTORAGE_KEY);
-    if (saved) {
-      setChecked(JSON.parse(saved));
-    }
+    if (saved) setChecked(JSON.parse(saved));
   }, []);
 
-  // Save to localStorage on change
   useEffect(() => {
     localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(checked));
   }, [checked]);
 
-  const toggleSection = (idx) => {
-    setOpenIndex(openIndex === idx ? null : idx);
-  };
+  const toggleSection = (idx) => setOpenIndex(openIndex === idx ? null : idx);
 
   const handleCheck = (sectionIdx, problemIdx) => {
     setChecked((prev) => ({
@@ -49,7 +47,7 @@ const DPSheetPage = () => {
     }));
   };
 
-  // Calculate progress for a section
+  // Calculate section progress
   const getSectionProgress = (sectionIdx, links) => {
     if (!links || links.length === 0)
       return { percent: 0, solved: 0, total: 0 };
@@ -63,12 +61,52 @@ const DPSheetPage = () => {
     };
   };
 
+  // Calculate overall progress
+  const totalProblems = dpSections.reduce(
+    (sum, section) => sum + (section.links?.length || 0),
+    0
+  );
+  const totalSolved = dpSections.reduce(
+    (sum, section, sectionIdx) =>
+      sum +
+      (section.links
+        ? section.links.filter(
+            (_, problemIdx) => checked[`${sectionIdx}-${problemIdx}`]
+          ).length
+        : 0),
+    0
+  );
+  const overallPercent =
+    totalProblems === 0 ? 0 : Math.round((totalSolved / totalProblems) * 100);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white font-sans py-10 px-4">
       <div className="max-w-2xl mx-auto">
-        <h1 className="text-4xl font-extrabold mb-8 text-center tracking-tight">
-          <span className="text-amber-400">DP Sheet</span> Topics
-        </h1>
+        {/* OVERALL PROGRESS CIRCLE */}
+        <div className="flex items-center mb-8 gap-8">
+          <div>
+            <div className="text-2xl font-bold">Total Progress</div>
+            <div className="text-3xl font-extrabold mt-2">
+              {totalSolved}{" "}
+              <span className="text-gray-400">/ {totalProblems}</span>
+            </div>
+          </div>
+          <div style={{ width: 100, height: 100 }}>
+            <CircularProgressbar
+              value={overallPercent}
+              text={`${overallPercent}%`}
+              styles={buildStyles({
+                pathColor: "#f59e42",
+                textColor: "#fff",
+                trailColor: "#333",
+                textSize: "22px",
+                strokeLinecap: "round",
+              })}
+              strokeWidth={10}
+            />
+          </div>
+        </div>
+        {/* REST OF YOUR PAGE */}
         <div className="space-y-4">
           {dpSections.map((section, sectionIdx) => {
             const { percent, solved, total } = getSectionProgress(
