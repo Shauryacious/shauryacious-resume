@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/contest", label: "Contest" },
+  { href: "/sheets", label: "Sheets" }, // Added Sheets page
 ];
 
 const Navbar = () => (

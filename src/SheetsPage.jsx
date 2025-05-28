@@ -4,31 +4,30 @@ import { Link } from "react-router-dom";
 
 const sheets = [
   {
-    title: "DSA Sheet",
+    title: "DP Sheet",
     description:
-      "A curated list of must-solve Data Structures & Algorithms problems.",
-    icon: "📚",
-    link: "#", // Replace with actual link or route
+      "Master Dynamic Programming with a curated set of essential problems.",
+    icon: "🧮",
+    link: "/sheets/dp",
   },
   {
-    title: "CP Fundamentals",
-    description:
-      "Essential concepts and problems for competitive programming beginners.",
-    icon: "🧠",
-    link: "#",
+    title: "Graph Sheet",
+    description: "Explore graph algorithms and problem-solving techniques.",
+    icon: "🔗",
+    link: "/sheets/graph",
   },
   {
-    title: "Advanced Algorithms",
-    description:
-      "Challenging problems covering advanced algorithms and techniques.",
-    icon: "🚀",
-    link: "#",
+    title: "Tree Sheet",
+    description: "Practice tree data structures and related algorithms.",
+    icon: "🌳",
+    link: "/sheets/tree",
   },
   {
-    title: "Interview Prep",
-    description: "Handpicked problems to ace your coding interviews.",
-    icon: "💼",
-    link: "#",
+    title: "Range Query Sheet",
+    description:
+      "Tackle problems involving segment trees, BITs, and range queries.",
+    icon: "📏",
+    link: "/sheets/range-query",
   },
 ];
 
