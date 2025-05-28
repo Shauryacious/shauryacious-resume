@@ -144,8 +144,8 @@ const dpSections = [
         title: "Digit DP",
         description: "DP on the digits of numbers, often used in counting problems.",
         links: [
-            "https://leetcode.com/problems/count-integers-in-intervals/",
-            "https://leetcode.com/problems/count-integers-with-unique-digits/",
+            "https://leetcode.com/problems/range-sum-of-digits/",
+            "https://leetcode.com/problems/count-integers-within-a-range/",
             "https://leetcode.com/problems/number-of-beautiful-integers/",
             "https://leetcode.com/problems/count-stepping-numbers/",
             "https://leetcode.com/problems/numbers-at-most-n-given-digit-set/",
@@ -155,7 +155,8 @@ const dpSections = [
             "https://leetcode.com/problems/numbers-with-repeated-digits/",
             "https://leetcode.com/problems/find-all-good-strings/",
         ],
-    },
+    }
+    
     {
         title: "DP on Trees",
         description: "Dynamic programming on tree data structures.",
