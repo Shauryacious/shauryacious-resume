@@ -23,8 +23,6 @@ function extractNameFromLeetCodeUrl(url) {
 
 const LOCALSTORAGE_KEY = "dpChecklistState";
 
-// ...existing imports and helpers...
-
 const DPSheetPage = () => {
   const [openIndex, setOpenIndex] = useState(0);
   const [checked, setChecked] = useState({});
@@ -81,17 +79,23 @@ const DPSheetPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white font-sans py-10 px-4">
-      <div className="max-w-2xl mx-auto">
-        {/* OVERALL PROGRESS CIRCLE */}
-        <div className="flex items-center mb-8 gap-8">
-          <div>
-            <div className="text-2xl font-bold">Total Progress</div>
-            <div className="text-3xl font-extrabold mt-2">
-              {totalSolved}{" "}
-              <span className="text-gray-400">/ {totalProblems}</span>
+      <div className="max-w-3xl mx-auto">
+        {/* Heading and Progress Side by Side */}
+        <div className="flex flex-col md:flex-row items-center justify-between mb-10 gap-6">
+          <div className="flex-1 text-center md:text-left">
+            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-2">
+              <span className="text-amber-400 drop-shadow">DP Sheet</span>
+            </h1>
+            <p className="text-lg text-white italic font-medium">
+              Isko Laga Dala To DP Jhingalala!
+            </p>
+            <div className="mt-4 text-lg text-gray-300 font-semibold">
+              Total Progress:{" "}
+              <span className="text-amber-400">{totalSolved}</span>
+              <span className="text-gray-400"> / {totalProblems}</span>
             </div>
           </div>
-          <div style={{ width: 100, height: 100 }}>
+          <div className="w-32 h-32 flex-shrink-0">
             <CircularProgressbar
               value={overallPercent}
               text={`${overallPercent}%`}
@@ -99,15 +103,15 @@ const DPSheetPage = () => {
                 pathColor: "#f59e42",
                 textColor: "#fff",
                 trailColor: "#333",
-                textSize: "22px",
+                textSize: "24px",
                 strokeLinecap: "round",
               })}
               strokeWidth={10}
             />
           </div>
         </div>
-        {/* REST OF YOUR PAGE */}
-        <div className="space-y-4">
+        {/* Section Accordions */}
+        <div className="space-y-6">
           {dpSections.map((section, sectionIdx) => {
             const { percent, solved, total } = getSectionProgress(
               sectionIdx,
@@ -116,12 +120,12 @@ const DPSheetPage = () => {
             return (
               <div
                 key={section.title}
-                className="bg-gray-800 rounded-xl border border-gray-700 shadow-lg p-4"
+                className="bg-gray-800 rounded-2xl border border-gray-700 shadow-xl p-6"
               >
                 {/* Progress Bar and Count */}
-                <div className="flex items-center mb-2">
+                <div className="flex items-center mb-3">
                   <div className="flex-1 mr-4">
-                    <div className="relative h-2.5 w-full rounded-full bg-gray-700 overflow-hidden">
+                    <div className="relative h-3 w-full rounded-full bg-gray-700 overflow-hidden">
                       <div
                         className="absolute h-full rounded-full bg-amber-400 transition-all duration-500"
                         style={{ width: `${percent}%` }}
@@ -135,7 +139,7 @@ const DPSheetPage = () => {
                 {/* Accordion Button */}
                 <button
                   onClick={() => toggleSection(sectionIdx)}
-                  className={`w-full flex justify-between items-center px-2 py-2 text-lg font-semibold focus:outline-none transition-colors rounded-xl ${
+                  className={`w-full flex justify-between items-center px-2 py-3 text-xl font-bold focus:outline-none transition-colors rounded-xl ${
                     openIndex === sectionIdx
                       ? "text-amber-400"
                       : "text-white hover:text-amber-400"
