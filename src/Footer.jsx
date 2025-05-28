@@ -14,7 +14,7 @@ const socialLinks = [
     ),
   },
   {
-    href: "https://github.com/",
+    href: "https://github.com/Shauryacious/cp-duel",
     label: "GitHub",
     icon: (
       <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -23,7 +23,7 @@ const socialLinks = [
     ),
   },
   {
-    href: "mailto:support@cpduel.com",
+    href: "mailto:shauryaagrawal2718@gmail.com",
     label: "Email",
     icon: (
       <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -88,7 +88,7 @@ const Footer = () => (
       <span>© {new Date().getFullYear()} CP Duel. All rights reserved.</span>
       <span className="block mt-1">
         Made with <span className="text-amber-400">♥</span> for competitive
-        programmers.
+        programmers by <span className="text-amber-400">Shaurya Agrawal</span>.
       </span>
     </div>
   </footer>
