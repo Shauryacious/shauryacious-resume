@@ -155,8 +155,7 @@ const dpSections = [
             "https://leetcode.com/problems/numbers-with-repeated-digits/",
             "https://leetcode.com/problems/find-all-good-strings/",
         ],
-    }
-    
+    },
     {
         title: "DP on Trees",
         description: "Dynamic programming on tree data structures.",
