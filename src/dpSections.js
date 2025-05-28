@@ -144,19 +144,18 @@ const dpSections = [
         title: "Digit DP",
         description: "DP on the digits of numbers, often used in counting problems.",
         links: [
-            "https://leetcode.com/problems/count-integers-in-intervals/", // RangeDigitSum (approximate)
-            "https://leetcode.com/problems/count-integers-with-unique-digits/", // Count of Integers (approximate)
-            "https://leetcode.com/problems/number-of-beautiful-integers/", // Number of Beautiful Integers in the Range
-            "https://leetcode.com/problems/count-stepping-numbers/", // Count Stepping Numbers in Range
-            "https://leetcode.com/problems/numbers-at-most-n-given-digit-set/", // Numbers At Most N Given Digit Set
-            "https://leetcode.com/problems/number-of-digit-one/", // Number of Digit One
-            "https://leetcode.com/problems/powerful-integers/", // Count the Number of Powerful Integers
-            "https://leetcode.com/problems/non-negative-integers-without-consecutive-ones/", // Non-negative Integers without Consecutive Ones
-            "https://leetcode.com/problems/numbers-with-repeated-digits/", // Numbers With Repeated Digits
-            "https://leetcode.com/problems/find-all-good-strings/", // Find All Good Strings
+            "https://leetcode.com/problems/count-integers-in-intervals/",
+            "https://leetcode.com/problems/count-integers-with-unique-digits/",
+            "https://leetcode.com/problems/number-of-beautiful-integers/",
+            "https://leetcode.com/problems/count-stepping-numbers/",
+            "https://leetcode.com/problems/numbers-at-most-n-given-digit-set/",
+            "https://leetcode.com/problems/number-of-digit-one/",
+            "https://leetcode.com/problems/powerful-integers/",
+            "https://leetcode.com/problems/non-negative-integers-without-consecutive-ones/",
+            "https://leetcode.com/problems/numbers-with-repeated-digits/",
+            "https://leetcode.com/problems/find-all-good-strings/",
         ],
-    }
-    
+    },
     {
         title: "DP on Trees",
         description: "Dynamic programming on tree data structures.",
