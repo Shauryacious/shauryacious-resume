@@ -42,3 +42,9 @@ export function useLocalStorageState(key, defaultValue) {
 
   return [state, setState];
 }
+
+export function getPlatformFromUrl(url) {
+  if (/leetcode\.com\/problems\//i.test(url)) return "lc";
+  if (/geeksforgeeks\.org\/problems\//i.test(url)) return "gfg";
+  return "other";
+}

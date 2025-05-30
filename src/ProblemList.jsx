@@ -1,6 +1,12 @@
-// ProblemList.js
 import React from "react";
-import { extractNameFromLeetCodeUrl } from "./utils";
+import { extractNameFromLeetCodeUrl, getPlatformFromUrl } from "./utils";
+import lcLogo from "./assets/lc.svg";
+import gfgLogo from "./assets/gfg.svg";
+
+const platformLogo = {
+  lc: lcLogo,
+  gfg: gfgLogo,
+};
 
 const ProblemList = ({
   links,
@@ -14,6 +20,9 @@ const ProblemList = ({
     {links.map((url, problemIdx) => {
       const favKey = `${sectionIdx}-${problemIdx}`;
       const isFav = !!favorites[favKey];
+      const platform = getPlatformFromUrl(url);
+      const logo = platformLogo[platform];
+
       return (
         <li
           key={url}
@@ -28,7 +37,7 @@ const ProblemList = ({
           />
           <label
             htmlFor={`dp-${sectionIdx}-${problemIdx}`}
-            className="flex-1 cursor-pointer"
+            className="flex-1 cursor-pointer flex items-center gap-2"
           >
             <a
               href={url}
@@ -38,6 +47,14 @@ const ProblemList = ({
             >
               {extractNameFromLeetCodeUrl(url)}
             </a>
+            {logo && (
+              <img
+                src={logo}
+                alt={platform}
+                className="w-6 h-6 inline-block align-middle"
+                style={{ minWidth: 24 }}
+              />
+            )}
           </label>
           <button
             className={`ml-auto text-2xl focus:outline-none transition-colors ${
