@@ -50,6 +50,7 @@ const dpSections = [
         title: "Knapsack",
         description: "0/1, Unbounded, and variations of knapsack problems.",
         links: [
+            "https://www.geeksforgeeks.org/problems/subset-sum-problem-1611555638/1",
             "https://leetcode.com/problems/house-robber-ii/",
             "https://leetcode.com/problems/ones-and-zeroes/",
             "https://leetcode.com/problems/target-sum/",

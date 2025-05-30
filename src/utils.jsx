@@ -1,19 +1,25 @@
 // utils.js
 
-// Extracts a readable name from a LeetCode URL
 export function extractNameFromLeetCodeUrl(url) {
-  const problemMatch = url.match(/problems\/([a-z0-9-]+)/i);
-  const listMatch = url.match(/list\/([a-z0-9-]+)/i);
-
-  if (problemMatch) {
-    const kebab = problemMatch[1];
+  // LeetCode
+  const lcMatch = url.match(/leetcode\.com\/problems\/([a-z0-9-]+)/i);
+  if (lcMatch) {
+    const kebab = lcMatch[1];
     return kebab
       .split("-")
       .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
       .join(" ");
   }
-  if (listMatch) {
-    return "LeetCode List";
+  // GeeksforGeeks
+  const gfgMatch = url.match(/geeksforgeeks\.org\/problems\/([a-z0-9-]+)/i);
+  if (gfgMatch) {
+    let kebab = gfgMatch[1];
+    // Remove trailing -digits (e.g., -1611555638)
+    kebab = kebab.replace(/-\d+$/, "");
+    return kebab
+      .split("-")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
   }
   return url;
 }
