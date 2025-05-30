@@ -1,40 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import dpSections from "./dpSections";
+import { useLocalStorageState } from "./utils";
+import FavoriteList from "./FavoriteList";
+import ProblemList from "./ProblemList";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 
-// Helper to extract a readable name from a LeetCode URL
-function extractNameFromLeetCodeUrl(url) {
-  const problemMatch = url.match(/problems\/([a-z0-9-]+)/i);
-  const listMatch = url.match(/list\/([a-z0-9-]+)/i);
-
-  if (problemMatch) {
-    const kebab = problemMatch[1];
-    return kebab
-      .split("-")
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(" ");
-  }
-  if (listMatch) {
-    return "LeetCode List";
-  }
-  return url;
-}
-
-const LOCALSTORAGE_KEY = "dpChecklistState";
-
 const DPSheetPage = () => {
+  const [checked, setChecked] = useLocalStorageState("dpChecklistState", {});
+  const [favorites, setFavorites] = useLocalStorageState("dpFavorites", {});
   const [openIndex, setOpenIndex] = useState(0);
-  const [checked, setChecked] = useState({});
-
-  useEffect(() => {
-    const saved = localStorage.getItem(LOCALSTORAGE_KEY);
-    if (saved) setChecked(JSON.parse(saved));
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(checked));
-  }, [checked]);
+  const [showFavorites, setShowFavorites] = useState(false);
 
   const toggleSection = (idx) => setOpenIndex(openIndex === idx ? null : idx);
 
@@ -45,21 +21,23 @@ const DPSheetPage = () => {
     }));
   };
 
-  // Calculate section progress
-  const getSectionProgress = (sectionIdx, links) => {
-    if (!links || links.length === 0)
-      return { percent: 0, solved: 0, total: 0 };
-    const solved = links.filter(
-      (_, problemIdx) => checked[`${sectionIdx}-${problemIdx}`]
-    ).length;
-    return {
-      percent: Math.round((solved / links.length) * 100),
-      solved,
-      total: links.length,
-    };
+  const handleFavorite = (sectionIdx, problemIdx, url) => {
+    setFavorites((prev) => {
+      const key = `${sectionIdx}-${problemIdx}`;
+      if (prev[key]) {
+        const updated = { ...prev };
+        delete updated[key];
+        return updated;
+      } else {
+        return {
+          ...prev,
+          [key]: { sectionIdx, problemIdx, url },
+        };
+      }
+    });
   };
 
-  // Calculate overall progress
+  // Progress calculations
   const totalProblems = dpSections.reduce(
     (sum, section) => sum + (section.links?.length || 0),
     0
@@ -77,10 +55,12 @@ const DPSheetPage = () => {
   const overallPercent =
     totalProblems === 0 ? 0 : Math.round((totalSolved / totalProblems) * 100);
 
+  const favoriteProblems = Object.values(favorites);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white font-sans py-10 px-4">
       <div className="max-w-3xl mx-auto">
-        {/* Heading and Progress Side by Side */}
+        {/* Header */}
         <div className="flex flex-col md:flex-row items-center justify-between mb-10 gap-6">
           <div className="flex-1 text-center md:text-left">
             <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-2">
@@ -110,13 +90,73 @@ const DPSheetPage = () => {
             />
           </div>
         </div>
-        {/* Section Accordions */}
+
+        {/* Favorites Toggle Button */}
+        <div className="mb-6 flex justify-end">
+          <button
+            className={`
+              relative flex items-center gap-2
+              px-5 py-2.5
+              rounded-full
+              bg-gradient-to-r from-amber-400 via-yellow-300 to-yellow-400
+              text-gray-900 font-bold
+              shadow-lg
+              hover:from-yellow-400 hover:to-amber-400
+              transition-all duration-200
+              focus:outline-none focus:ring-2 focus:ring-amber-300
+              group
+            `}
+            onClick={() => setShowFavorites((v) => !v)}
+          >
+            <span className="font-semibold tracking-wide">Favorites</span>
+            <span
+              className={`
+                text-xl transition-transform duration-200
+                ${
+                  showFavorites
+                    ? "rotate-12 scale-110 text-amber-600"
+                    : "group-hover:scale-110"
+                }
+              `}
+              aria-label="star"
+              role="img"
+            >
+              ★
+            </span>
+            {favoriteProblems.length > 0 && (
+              <span
+                className="
+                  absolute -top-2 -right-2
+                  bg-red-500 text-white rounded-full
+                  w-6 h-6 flex items-center justify-center
+                  text-xs font-bold shadow
+                  border-2 border-white
+                "
+              >
+                {favoriteProblems.length}
+              </span>
+            )}
+          </button>
+        </div>
+        {/* Favorites List (hidden/shown by button) */}
+        <FavoriteList
+          favoriteProblems={favoriteProblems}
+          handleFavorite={handleFavorite}
+          visible={showFavorites}
+        />
+
+        {/* Sections */}
         <div className="space-y-6">
           {dpSections.map((section, sectionIdx) => {
-            const { percent, solved, total } = getSectionProgress(
-              sectionIdx,
-              section.links
-            );
+            const links = section.links || [];
+            const solved = links.filter(
+              (_, problemIdx) => checked[`${sectionIdx}-${problemIdx}`]
+            ).length;
+            const percent =
+              links.length === 0
+                ? 0
+                : Math.round((solved / links.length) * 100);
+
             return (
               <div
                 key={section.title}
@@ -133,7 +173,7 @@ const DPSheetPage = () => {
                     </div>
                   </div>
                   <div className="text-white text-base font-semibold min-w-[60px] text-right">
-                    {solved} / {total}
+                    {solved} / {links.length}
                   </div>
                 </div>
                 {/* Accordion Button */}
@@ -174,33 +214,15 @@ const DPSheetPage = () => {
                     openIndex === sectionIdx ? "block" : "hidden"
                   }`}
                 >
-                  {section.links && section.links.length > 0 ? (
-                    <ul className="space-y-4 mt-2">
-                      {section.links.map((url, problemIdx) => (
-                        <li key={url} className="flex items-start gap-3">
-                          <input
-                            type="checkbox"
-                            className="accent-amber-400 w-5 h-5 mt-1"
-                            checked={!!checked[`${sectionIdx}-${problemIdx}`]}
-                            onChange={() => handleCheck(sectionIdx, problemIdx)}
-                            id={`dp-${sectionIdx}-${problemIdx}`}
-                          />
-                          <label
-                            htmlFor={`dp-${sectionIdx}-${problemIdx}`}
-                            className="flex-1 cursor-pointer"
-                          >
-                            <a
-                              href={url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-white hover:text-amber-300 font-medium transition"
-                            >
-                              {extractNameFromLeetCodeUrl(url)}
-                            </a>
-                          </label>
-                        </li>
-                      ))}
-                    </ul>
+                  {links.length > 0 ? (
+                    <ProblemList
+                      links={links}
+                      sectionIdx={sectionIdx}
+                      checked={checked}
+                      favorites={favorites}
+                      handleCheck={handleCheck}
+                      handleFavorite={handleFavorite}
+                    />
                   ) : (
                     <span>{section.description}</span>
                   )}

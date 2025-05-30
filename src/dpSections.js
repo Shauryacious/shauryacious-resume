@@ -6,8 +6,8 @@ const dpSections = [
         description: "Problems and techniques for classic linear dynamic programming.",
         links: [
             "https://leetcode.com/problems/climbing-stairs/",
-            "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
             "https://leetcode.com/problems/min-cost-climbing-stairs/",
+            "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
             "https://leetcode.com/problems/divisor-game/",
             "https://leetcode.com/problems/decode-ways/",
             "https://leetcode.com/problems/unique-binary-search-trees/",
