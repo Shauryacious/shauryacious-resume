@@ -86,7 +86,6 @@ const SheetsPage = () => (
         </p>
       </section>
     </main>
-    <Footer />
   </div>
 );
 
