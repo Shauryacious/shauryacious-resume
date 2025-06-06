@@ -105,15 +105,18 @@ const dpSections = [
     },
     {
         "title": "Classic Tiling Problems",
-        "description": "Fundamental tiling problems using 2*1 dominoes and basic patterns on 2*n or small rectangular grids.",
+        "description": "Fundamental tiling problems using dominoes on 2×n and small fixed-width grids.",
         "links": [
-            "https://www.geeksforgeeks.org/tiling-problem/",
+            "https://www.geeksforgeeks.org/problems/subset-sum-problem-1611555638/1",
             "https://leetcode.com/problems/domino-and-tromino-tiling/",
             "https://cses.fi/problemset/task/2181",
+            "https://www.spoj.com/problems/M3TILE/",
             "https://www.spoj.com/problems/GNY07H/",
-            "https://codeforces.com/blog/entry/20511",
-            "https://www.geeksforgeeks.org/tiling-problem-using-divide-and-conquer-algorithm/",
-            "https://www.spoj.com/problems/M3TILE/"
+            "https://www.codechef.com/practice/course/zco-inoi-problems/IARCSJUD/problems/TILINGS",
+            "https://www.codechef.com/practice/course/zco-inoi-problems/INOIPRAC/problems/INOI2002",
+            "https://atcoder.jp/contests/abc345/tasks/abc345_d",
+            "https://atcoder.jp/contests/agc021/tasks/agc021_c",
+            "https://www.geeksforgeeks.org/tiling-problem-using-divide-and-conquer-algorithm/"
         ]
     },
     {
@@ -126,8 +129,10 @@ const dpSections = [
             "https://www.geeksforgeeks.org/tile-stacking-problem/",
             "https://www.geeksforgeeks.org/tiling-with-dominoes/",
             "https://www.spoj.com/problems/PHIDIAS/",
-            "https://codeforces.com/blog/entry/117757",
-            "https://www.geeksforgeeks.org/domino-and-tromino-tiling-problem/"
+            "https://codeforces.com/problemset/problem/1150/B",
+            "https://atcoder.jp/contests/agc008/tasks/agc008_c",
+            "https://atcoder.jp/contests/abc353/tasks/abc353_f",
+            "https://codeforces.com/problemset/problem/1178/C"
         ]
     },
     {
