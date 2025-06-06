@@ -107,8 +107,9 @@ const dpSections = [
         "title": "Classic Tiling Problems",
         "description": "Fundamental tiling problems using dominoes on 2×n and small fixed-width grids.",
         "links": [
-            "https://www.geeksforgeeks.org/problems/subset-sum-problem-1611555638/1",
+            "https://www.geeksforgeeks.org/problems/ways-to-tile-a-floor5836/1",
             "https://leetcode.com/problems/domino-and-tromino-tiling/",
+            "https://www.geeksforgeeks.org/problems/count-the-number-of-ways-to-tile-the-floor-of-size-n-x-m-using-1-x-m-size-tiles0509/1",
             "https://cses.fi/problemset/task/2181",
             "https://www.spoj.com/problems/M3TILE/",
             "https://www.spoj.com/problems/GNY07H/",
