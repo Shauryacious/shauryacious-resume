@@ -12,6 +12,7 @@ const dpSections = [
             "https://leetcode.com/problems/decode-ways/",
             "https://leetcode.com/problems/unique-binary-search-trees/",
             "https://leetcode.com/problems/house-robber/",
+            "https://leetcode.com/problems/frog-jump/",
             "https://leetcode.com/problems/perfect-squares/",
             "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/",
             "https://leetcode.com/problems/coin-change/",
