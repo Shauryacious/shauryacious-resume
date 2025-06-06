@@ -12,9 +12,8 @@ const dpSections = [
             "https://leetcode.com/problems/decode-ways/",
             "https://leetcode.com/problems/unique-binary-search-trees/",
             "https://leetcode.com/problems/house-robber/",
+            "https://leetcode.com/problems/house-robber-ii",
             "https://leetcode.com/problems/frog-jump/",
-            "https://www.geeksforgeeks.org/problems/frogs-and-jumps--170647",
-            "https://leetcode.com/problems/frog-jump-ii/",
             "https://leetcode.com/problems/perfect-squares/",
             "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/",
             "https://leetcode.com/problems/coin-change/",
@@ -47,6 +46,7 @@ const dpSections = [
             "https://leetcode.com/problems/coin-change-2/",
             "https://leetcode.com/problems/partition-equal-subset-sum/",
             "https://leetcode.com/problems/paint-house/",
+            "https://www.geeksforgeeks.org/problems/ways-to-tile-a-floor5836/1",
         ],
     },
     {
@@ -102,6 +102,33 @@ const dpSections = [
             "https://leetcode.com/problems/paint-house-iii/",
             "https://leetcode.com/problems/count-all-possible-routes/",
         ],
+    },
+    {
+        "title": "Classic Tiling Problems",
+        "description": "Fundamental tiling problems using 2*1 dominoes and basic patterns on 2*n or small rectangular grids.",
+        "links": [
+            "https://www.geeksforgeeks.org/tiling-problem/",
+            "https://leetcode.com/problems/domino-and-tromino-tiling/",
+            "https://cses.fi/problemset/task/2181",
+            "https://www.spoj.com/problems/GNY07H/",
+            "https://codeforces.com/blog/entry/20511",
+            "https://www.geeksforgeeks.org/tiling-problem-using-divide-and-conquer-algorithm/",
+            "https://www.spoj.com/problems/M3TILE/"
+        ]
+    },
+    {
+        "title": "Advanced Tiling Problems",
+        "description": "Challenging problems involving optimal tiling with squares, rotations, constraints, or larger grids.",
+        "links": [
+            "https://leetcode.com/problems/tiling-a-rectangle-with-the-fewest-squares/",
+            "https://www.geeksforgeeks.org/count-number-of-ways-to-fill-a-n-x-4-grid-using-1-x-4-tiles/",
+            "https://www.geeksforgeeks.org/count-number-ways-tile-floor-size-n-x-m-using-1-x-m-size-tiles/",
+            "https://www.geeksforgeeks.org/tile-stacking-problem/",
+            "https://www.geeksforgeeks.org/tiling-with-dominoes/",
+            "https://www.spoj.com/problems/PHIDIAS/",
+            "https://codeforces.com/blog/entry/117757",
+            "https://www.geeksforgeeks.org/domino-and-tromino-tiling-problem/"
+        ]
     },
     {
         title: "Interval DP",
