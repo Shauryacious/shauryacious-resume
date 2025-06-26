@@ -46,7 +46,7 @@ const dpSections = [
             "https://leetcode.com/problems/coin-change-2/",
             "https://leetcode.com/problems/partition-equal-subset-sum/",
             "https://leetcode.com/problems/paint-house/",
-            "https://www.geeksforgeeks.org/problems/ways-to-tile-a-floor5836/1",
+            "https://leetcode.com/problems/integer-break/description/",
         ],
     },
     {
@@ -136,6 +136,27 @@ const dpSections = [
             "https://codeforces.com/problemset/problem/1178/C"
         ]
     },
+    {
+        "title": "Buy & Sell Stock Problems",
+        "description": "Greedy / DP problems focused on maximising profit when buying and selling stocks under differing constraints (single-transaction, unlimited transactions, k-transactions, cooldown, fees, etc.).",
+        "links": [
+            "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
+            "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/",
+            "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/",
+            "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/",
+            "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/",
+            "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/",
+            "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-v/",
+            "https://www.geeksforgeeks.org/all-variations-of-stock-problems/",
+            "https://www.geeksforgeeks.org/dsa/best-time-to-buy-and-sell-stock/",
+            "https://www.geeksforgeeks.org/dsa/stock-buy-sell/",
+            "https://www.geeksforgeeks.org/dsa/maximum-profit-by-buying-and-selling-a-share-at-most-twice/",
+            "https://www.geeksforgeeks.org/problems/maximum-profit4657/1",
+            "https://www.geeksforgeeks.org/dsa/maximizing-stock-profit-with-cooldown/",
+            "https://www.geeksforgeeks.org/dsa/maximum-profit-after-buying-and-selling-the-stocks-with-transaction-fees-set-2/"
+        ]
+    },
+
     {
         title: "Interval DP",
         description: "Dynamic programming on intervals and segments.",
