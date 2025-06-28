@@ -417,6 +417,22 @@ const dpSections = [
             "https://leetcode.com/problems/minimum-one-bit-operations-to-make-integers-zero/",
         ],
     },
+    {
+        title: "Meet in the Middle",
+        description: "Optimizations using subset splitting and recombining (O(2^(n/2))) for problems with small n (typically n ≤ 40).",
+        links: [
+            "https://cses.fi/problemset/task/1628",
+            "https://codeforces.com/blog/entry/95571",
+            "https://www.geeksforgeeks.org/meet-in-the-middle/",
+            "https://atcoder.jp/contests/abc149/tasks/abc149_d",
+            "https://codeforces.com/contest/90/problem/C",
+            "https://codeforces.com/problemset/problem/734/D",
+            "https://usaco.guide/gold/meet-in-the-middle",
+            "https://codeforces.com/problemset/problem/372/C",
+            "https://atcoder.jp/contests/abc281/tasks/abc281_e",
+            "https://codeforces.com/problemset/problem/786/B"
+        ]
+    }
 ];
 
 export default dpSections;
