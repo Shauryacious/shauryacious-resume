@@ -386,6 +386,22 @@ const dpSections = [
         ],
     },
     {
+        "title": "DP-on-Squares",
+        "description": "DP problems involving maximal/counting/equal-value square submatrices",
+        "links": [
+            "https://leetcode.com/problems/maximal-square/",
+            "https://leetcode.com/problems/count-square-submatrices-with-all-ones/description/",
+            "https://leetcode.com/problems/maximal-rectangle/description/",
+            "https://leetcode.com/problems/perfect-squares/",
+            "https://leetcode.com/problems/matchsticks-to-square/",
+            "https://www.geeksforgeeks.org/maximum-size-sub-matrix-with-all-1s-in-a-binary-matrix/",
+            "https://www.geeksforgeeks.org/number-of-square-matrices-with-all-1s/",
+            "https://www.geeksforgeeks.org/count-square-submatrices-with-average-at-least-k/",
+            "https://www.geeksforgeeks.org/finding-the-maximum-square-sub-matrix-with-all-equal-elements/"
+        ]
+    },
+
+    {
         title: "Memoization",
         description: "Top-down DP with memoization techniques.",
         links: [
