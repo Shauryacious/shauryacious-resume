@@ -265,6 +265,28 @@ const dpSections = [
         ],
     },
     {
+        "title": "Game Theory with DP",
+        "description": "Two-player, turn-based and zero-sum games solved using dynamic programming or minimax strategies.",
+        "links": [
+            "https://leetcode.com/problems/stone-game/",
+            "https://leetcode.com/problems/stone-game-ii/",
+            "https://leetcode.com/problems/stone-game-iii/",
+            "https://leetcode.com/problems/stone-game-iv/",
+            "https://leetcode.com/problems/stone-game-v/",
+            "https://leetcode.com/problems/stone-game-vi/",
+            "https://leetcode.com/problems/stone-game-vii/",
+            "https://leetcode.com/problems/predict-the-winner/",
+            "https://leetcode.com/problems/nim-game/",
+            "https://leetcode.com/problems/cat-and-mouse/",
+            "https://leetcode.com/problems/cat-and-mouse-ii/",
+            "https://leetcode.com/problems/geek-and-its-game-of-coins4043/description/",
+            "https://www.geeksforgeeks.org/problems/coin-game-winner-every-player-three-choices/",
+            "https://www.geeksforgeeks.org/problems/game-of-n-stones-where-each-player-can-remove-1-3-or-4/",
+            "https://www.geeksforgeeks.org/problems/optimal-strategy-for-a-game-dp-31/"
+        ]
+    },
+
+    {
         title: "Digit DP",
         description: "DP on the digits of numbers, often used in counting problems.",
         links: [
