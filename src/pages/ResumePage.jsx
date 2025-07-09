@@ -7,6 +7,7 @@ import {
   achievements,
   responsibilities,
   miscellaneous,
+  academic,
   codingProfiles,
 } from "../data";
 import Header from "../components/Header";
@@ -17,9 +18,10 @@ import ExperienceCard from "../components/ExperienceCard";
 import AchievementCard from "../components/AchievementCard";
 import ResponsibilityTimelineCard from "../components/ResponsibilityTimelineCard";
 import MiscCard from "../components/MiscCard";
+import AcademicCard from "../components/AcademicCard";
 import Footer from "../components/Footer";
 import CodingProfiles from "../components/CodingProfiles";
-import ThemeToggle from "../components/ThemeToggle"; // <-- Add this import
+import ThemeToggle from "../components/ThemeToggle";
 
 const ResumePage = () => {
   return (
@@ -81,22 +83,31 @@ const ResumePage = () => {
             </div>
           </Section>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <Section title="Positions of Responsibility" icon="users">
-              <div className="space-y-6">
-                {responsibilities.map((orgItem, i) => (
-                  <ResponsibilityTimelineCard key={i} {...orgItem} />
-                ))}
-              </div>
-            </Section>
-            <Section title="Miscellaneous" icon="book-open">
-              <div className="space-y-4">
-                {miscellaneous.map((item, i) => (
-                  <MiscCard key={i} {...item} />
-                ))}
-              </div>
-            </Section>
-          </div>
+          <Section title="Positions of Responsibility" icon="users">
+            <div className="space-y-6">
+              {responsibilities.map((orgItem, i) => (
+                <ResponsibilityTimelineCard key={i} {...orgItem} />
+              ))}
+            </div>
+          </Section>
+
+          {/* New Miscellaneous Section */}
+          <Section title="Miscellaneous" icon="book-open">
+            <div className="flex flex-wrap gap-3">
+              {miscellaneous.map((item, i) => (
+                <MiscCard key={i} {...item} />
+              ))}
+            </div>
+          </Section>
+
+          {/* New Competitive Exam Results Section */}
+          <Section title="Competitive Exam Results" icon="trophy">
+            <div className="flex flex-wrap gap-3">
+              {academic.map((item, i) => (
+                <AcademicCard key={i} {...item} />
+              ))}
+            </div>
+          </Section>
         </main>
         <Footer />
       </div>

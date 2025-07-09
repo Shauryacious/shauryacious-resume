@@ -2,15 +2,26 @@
 const miscellaneous = [
     {
         title: "National Level Chess Player",
-        desc: "Achieved a state rank of 18."
+        icon: "/assets/chess.svg",
+        points: [
+            "Achieved a peak rating of 2167",
+            "State rank 18",
+            "Strategist and Analyst",
+        ],
+        links: [
+            {
+                label: "Lichess",
+                url: "https://lichess.org/@/Shauryacious"
+            },
+            {
+                label: "Chess.com",
+                url: "https://www.chess.com/member/shauryacious"
+            }
+        ]
     },
     {
         title: "Social Activist",
         desc: "Mentor at Open Link Foundation (NGO) for JEE/NEET aspirants and co-developed a mentorship app."
-    },
-    {
-        title: "Academic Excellence",
-        desc: "99.01 percentile in JEE Mains and 9k AIR in JEE Advanced."
     }
 ];
 
