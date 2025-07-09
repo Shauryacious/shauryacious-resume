@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+// src/pages/ResumePage.jsx
+import React from "react";
 import {
   skills,
   projects,
@@ -20,19 +21,12 @@ import Footer from "../components/Footer";
 import CodingProfiles from "../components/CodingProfiles";
 
 const ResumePage = () => {
-  const [theme, setTheme] = useState("dark");
-  useEffect(() => {
-    document.documentElement.classList.add(theme);
-    return () => document.documentElement.classList.remove(theme);
-  }, [theme]);
-
   return (
-    <div className="min-h-screen bg-slate-900 text-slate-400 font-sans leading-relaxed">
+    <div className="min-h-screen bg-[#f8fafc] dark:bg-[#181c20] text-[#222] dark:text-slate-300 font-sans leading-relaxed transition-colors">
       <div className="container mx-auto p-4 sm:p-6 lg:p-8">
-        <main className="max-w-7xl mx-auto">
+        <main className="max-w-5xl mx-auto">
           <Header />
 
-          {/* --- Coding Profiles Section --- */}
           <Section title="Coding Profiles" icon="code">
             <CodingProfiles profiles={codingProfiles} />
           </Section>
