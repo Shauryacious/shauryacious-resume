@@ -1,12 +1,11 @@
-// src/components/CodingProfiles.jsx
 import React from "react";
 import { ExternalLink } from "lucide-react";
 
-// Platform icon mapping using your SVG assets
+// Platform icon mapping using your SVG assets from public/assets
 const platformIcons = {
   LeetCode: (
     <img
-      src="/src/assets/lc.svg"
+      src="/assets/lc.svg"
       alt="LeetCode"
       className="h-6 w-6 mr-2 rounded-full bg-white p-0.5"
       style={{ boxShadow: "0 1px 4px rgba(26,115,232,0.08)" }}
@@ -14,7 +13,7 @@ const platformIcons = {
   ),
   CodeChef: (
     <img
-      src="/src/assets/cc.svg"
+      src="/assets/cc.svg"
       alt="CodeChef"
       className="h-6 w-6 mr-2 rounded-full bg-white p-0.5"
       style={{ boxShadow: "0 1px 4px rgba(26,115,232,0.08)" }}
@@ -22,7 +21,7 @@ const platformIcons = {
   ),
   Codeforces: (
     <img
-      src="/src/assets/cf.svg"
+      src="/assets/cf.svg"
       alt="Codeforces"
       className="h-6 w-6 mr-2 rounded-full bg-white p-0.5"
       style={{ boxShadow: "0 1px 4px rgba(26,115,232,0.08)" }}
@@ -30,7 +29,7 @@ const platformIcons = {
   ),
   GeeksforGeeks: (
     <img
-      src="/src/assets/gfg.svg"
+      src="/assets/gfg.svg"
       alt="GeeksforGeeks"
       className="h-6 w-6 mr-2 rounded-full bg-white p-0.5"
       style={{ boxShadow: "0 1px 4px rgba(26,115,232,0.08)" }}
