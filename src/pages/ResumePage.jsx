@@ -91,20 +91,20 @@ const ResumePage = () => {
             </div>
           </Section>
 
-          {/* New Miscellaneous Section */}
-          <Section title="Miscellaneous" icon="book-open">
-            <div className="flex flex-wrap gap-3">
-              {miscellaneous.map((item, i) => (
-                <MiscCard key={i} {...item} />
-              ))}
-            </div>
-          </Section>
-
           {/* New Competitive Exam Results Section */}
           <Section title="Competitive Exam Results" icon="trophy">
             <div className="flex flex-wrap gap-3">
               {academic.map((item, i) => (
                 <AcademicCard key={i} {...item} />
+              ))}
+            </div>
+          </Section>
+
+          {/* New Miscellaneous Section */}
+          <Section title="Miscellaneous" icon="book-open">
+            <div className="flex flex-wrap gap-3">
+              {miscellaneous.map((item, i) => (
+                <MiscCard key={i} {...item} />
               ))}
             </div>
           </Section>

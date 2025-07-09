@@ -20,8 +20,13 @@ const miscellaneous = [
         ]
     },
     {
-        title: "Social Activist",
-        desc: "Mentor at Open Link Foundation (NGO) for JEE/NEET aspirants and co-developed a mentorship app."
+        title: "Social Activist - Vinoba Polestar (Open Link Foundation)",
+        points: [
+            "Worked under the District Collector of Raipur",
+            "Mentored JEE/NEET aspirants, boosting their academic and personal growth",
+            "Helped organize workshops and mentorship programs for underprivileged students",
+            "Contributed to community development initiatives"
+        ]
     }
 ];
 
