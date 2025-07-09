@@ -6,6 +6,7 @@ import {
   achievements,
   responsibilities,
   miscellaneous,
+  codingProfiles,
 } from "../data";
 import Header from "../components/Header";
 import Section from "../components/Section";
@@ -16,6 +17,7 @@ import AchievementCard from "../components/AchievementCard";
 import ResponsibilityCard from "../components/ResponsibilityCard";
 import MiscCard from "../components/MiscCard";
 import Footer from "../components/Footer";
+import CodingProfiles from "../components/CodingProfiles";
 
 const ResumePage = () => {
   const [theme, setTheme] = useState("dark");
@@ -29,6 +31,11 @@ const ResumePage = () => {
       <div className="container mx-auto p-4 sm:p-6 lg:p-8">
         <main className="max-w-7xl mx-auto">
           <Header />
+
+          {/* --- Coding Profiles Section --- */}
+          <Section title="Coding Profiles" icon="code">
+            <CodingProfiles profiles={codingProfiles} />
+          </Section>
 
           <Section title="Technical Skills" icon="brain">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
