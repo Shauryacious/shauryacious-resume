@@ -1,33 +1,106 @@
-# CP Duel
+# 💼 Shaurya Bansal — Portfolio Website
 
-**Live Demo:** [https://cp-duel.vercel.app/](https://cp-duel.vercel.app/)
+Welcome to the source code of my personal portfolio, built to showcase my work, achievements, and journey as a developer.
 
-CP Duel is a modern, competitive programming duel platform where users can challenge each other to real-time coding battles, view live leaderboards, and experience a LeetCode-like problem-solving interface.
-
----
-
-## 🚀 Features
-
-- 1v1 Coding Duels with real-time status
-- Tournament Bracket Playoffs
-- Round, Semi-final, Final, and Winner Leaderboards
-- LeetCode-style Problem Solving UI with timer and opponent status
-- Responsive, dark-themed UI
-- Deployed on Vercel for fast global access
+🌐 **Live Website**: [shauryacious.vercel.app](https://shauryacious.vercel.app/)
 
 ---
 
-## 🖥️ Live Site
+## 📌 Overview
 
-👉 **Try it now:** [https://cp-duel.vercel.app/](https://cp-duel.vercel.app/)
+This is a sleek, responsive, and animated single-page portfolio built using **React** with **Vite** for blazing-fast development and build times. It highlights:
+
+- 🛠️ Projects and Tech Stack
+- 🏆 Achievements (Hackathons, CP, etc.)
+- 💼 Experiences and Responsibilities
+- 📚 Skills and Miscellaneous Contributions
+- 🌐 Contact and Social Links
+
+---
+
+## 🚀 Tech Stack
+
+- **Framework**: React (Vite)
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Deployment**: Vercel
+- **Other Tools**: ESLint, Prettier, Vite SVG loader
 
 ---
 
-## 🛠️ Tech Stack
+## 📂 Project Structure
 
-- React + Vite
-- Tailwind CSS
-- React Router
-- Deployed on Vercel
+```
+
+.
+├── public/ # Static assets (favicon, logos)
+│ └── logo.png
+├── src/
+│ ├── App.jsx # Root component
+│ ├── main.jsx # React DOM mount
+│ ├── index.css # Tailwind & global styles
+│ ├── assets/ # Static imported assets
+│ ├── components/ # Reusable components like cards, headers, footers
+│ ├── pages/ # Page structure (e.g., ResumePage)
+│ └── data/ # Dynamic content stored as JS modules
+│   ├── achievements.js
+│   ├── experiences.js
+│   ├── miscellaneous.js
+│   ├── projects.js
+│   ├── responsibilities.js
+│   └── skills.js
+├── index.html # Entry HTML
+├── vite.config.js # Vite configuration
+├── eslint.config.js # ESLint config
+├── vercel.json # Vercel deployment config
+├── package.json
+└── README.md
+
+```
 
 ---
+
+## 🧠 Running Locally
+
+Clone the repository and run the dev server:
+
+```bash
+git clone https://github.com/Shauryacious/portfolio.git
+cd portfolio
+npm install
+npm run dev
+```
+
+The site should now be running at `http://localhost:5173/`.
+
+---
+
+## 🛠️ Customization
+
+You can update your content by editing the files in `src/data/`. Each section is modular:
+
+- **Projects** → `projects.js`
+- **Skills** → `skills.js`
+- **Achievements** → `achievements.js`
+- **Experience** → `experiences.js`
+- **Responsibilities** → `responsibilities.js`
+- **Misc** → `miscellaneous.js`
+
+---
+
+## 🧾 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## 🙋‍♂️ Author
+
+**Shaurya Bansal**
+📧 [shauryaagrawal2718@gmail.com](mailto:shauryaagrawal2718@gmail.com)
+🔗 [LinkedIn](https://www.linkedin.com/in/shauryacious/)
+🐙 [GitHub](https://github.com/Shauryacious)
+
+---
+
+> Designed & developed with ❤️ to reflect growth, passion, and potential.
