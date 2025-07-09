@@ -15,10 +15,11 @@ import SkillCategory from "../components/SkillCategory";
 import ProjectCard from "../components/ProjectCard";
 import ExperienceCard from "../components/ExperienceCard";
 import AchievementCard from "../components/AchievementCard";
-import ResponsibilityCard from "../components/ResponsibilityCard";
+import ResponsibilityTimelineCard from "../components/ResponsibilityTimelineCard";
 import MiscCard from "../components/MiscCard";
 import Footer from "../components/Footer";
 import CodingProfiles from "../components/CodingProfiles";
+import ThemeToggle from "../components/ThemeToggle"; // <-- Add this import
 
 const ResumePage = () => {
   return (
@@ -83,8 +84,8 @@ const ResumePage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <Section title="Positions of Responsibility" icon="users">
               <div className="space-y-6">
-                {responsibilities.map((resp, i) => (
-                  <ResponsibilityCard key={i} {...resp} />
+                {responsibilities.map((orgItem, i) => (
+                  <ResponsibilityTimelineCard key={i} {...orgItem} />
                 ))}
               </div>
             </Section>
@@ -98,6 +99,10 @@ const ResumePage = () => {
           </div>
         </main>
         <Footer />
+      </div>
+      {/* Fixed Theme Toggle Button */}
+      <div className="fixed bottom-6 right-6 z-50">
+        <ThemeToggle />
       </div>
     </div>
   );

@@ -1,7 +1,6 @@
 // src/components/Header.jsx
 import React from "react";
 import { Mail, Phone, MapPin, Linkedin, Github, Code } from "lucide-react";
-import ThemeToggle from "./ThemeToggle";
 
 const Header = () => {
   return (
@@ -18,7 +17,7 @@ const Header = () => {
         </p>
       </div>
       <div className="mt-6 lg:mt-0 text-right text-sm flex flex-col items-end gap-2">
-        <ThemeToggle />
+        {/* ThemeToggle removed from here */}
         <div className="flex items-center justify-end">
           <a
             href="mailto:shauryaagrawal2718@gmail.com"

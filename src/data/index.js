@@ -1,4 +1,6 @@
 // src/data/index.js
+// Central export for all resume data modules
+
 export { default as skills } from "./skills";
 export { default as projects } from "./projects";
 export { default as experiences } from "./experiences";
